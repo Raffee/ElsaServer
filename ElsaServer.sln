@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis.Core.WorkflowServer", "ElsaServer\Genesis.Core.WorkflowServer.csproj", "{3BEC9F88-E01C-43E7-97BE-CB3C328057D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis.Common", "Workflow.Common\Genesis.Common.csproj", "{0CAB5B75-575D-4B47-B1BF-7731A07A2700}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis.Modules.BorrowersModule", "BorrowerModule\Genesis.Modules.BorrowersModule.csproj", "{AF619B8B-F813-4A6B-B800-A87716101531}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5CBDE4E9-46B9-4CEC-8258-382A9536DD4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{DC22643A-03C5-4F47-9BCB-92772CED914E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{9CB8C60E-5247-45CA-9659-32724A494303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis.Adapters.MambuAdapter", "Genesis.Adapters.MambuAdapter\Genesis.Adapters.MambuAdapter.csproj", "{75AB92C0-67CB-40E2-ADD4-9E166CEBD087}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis.Adapters.AmlKycAdapter", "Genesis.Adapters.AmlKycAdapter\Genesis.Adapters.AmlKycAdapter.csproj", "{47C61281-6669-4305-93A4-DCEE33CB8318}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BEC9F88-E01C-43E7-97BE-CB3C328057D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEC9F88-E01C-43E7-97BE-CB3C328057D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEC9F88-E01C-43E7-97BE-CB3C328057D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEC9F88-E01C-43E7-97BE-CB3C328057D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CAB5B75-575D-4B47-B1BF-7731A07A2700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CAB5B75-575D-4B47-B1BF-7731A07A2700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CAB5B75-575D-4B47-B1BF-7731A07A2700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CAB5B75-575D-4B47-B1BF-7731A07A2700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF619B8B-F813-4A6B-B800-A87716101531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF619B8B-F813-4A6B-B800-A87716101531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF619B8B-F813-4A6B-B800-A87716101531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF619B8B-F813-4A6B-B800-A87716101531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75AB92C0-67CB-40E2-ADD4-9E166CEBD087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75AB92C0-67CB-40E2-ADD4-9E166CEBD087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75AB92C0-67CB-40E2-ADD4-9E166CEBD087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75AB92C0-67CB-40E2-ADD4-9E166CEBD087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C61281-6669-4305-93A4-DCEE33CB8318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C61281-6669-4305-93A4-DCEE33CB8318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C61281-6669-4305-93A4-DCEE33CB8318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C61281-6669-4305-93A4-DCEE33CB8318}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3BEC9F88-E01C-43E7-97BE-CB3C328057D5} = {5CBDE4E9-46B9-4CEC-8258-382A9536DD4D}
+		{0CAB5B75-575D-4B47-B1BF-7731A07A2700} = {5CBDE4E9-46B9-4CEC-8258-382A9536DD4D}
+		{AF619B8B-F813-4A6B-B800-A87716101531} = {DC22643A-03C5-4F47-9BCB-92772CED914E}
+		{75AB92C0-67CB-40E2-ADD4-9E166CEBD087} = {9CB8C60E-5247-45CA-9659-32724A494303}
+		{47C61281-6669-4305-93A4-DCEE33CB8318} = {9CB8C60E-5247-45CA-9659-32724A494303}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C277450-5960-4BD4-8307-4116E9CD738F}
+	EndGlobalSection
+EndGlobal
