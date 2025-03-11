@@ -4,6 +4,8 @@ using Elsa.EntityFrameworkCore.Modules.Runtime;
 using Elsa.Extensions;
 using Elsa.Workflows.Runtime;
 using ElsaServer.Workflows;
+using Genesis.Common.Core;
+using Genesis.Core.WorkflowServer;
 
 namespace ElsaServer
 {
@@ -13,7 +15,10 @@ namespace ElsaServer
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddTransient<CreateLoan>();
+            builder.Services.AddServiceRegistry();
+
+            builder.Services.LoadBusinessModules();
+            builder.Services.LoadServiceProviders();
 
             builder.Services.AddElsa(elsa =>
             {
@@ -70,7 +75,10 @@ namespace ElsaServer
 
                 // Register custom workflows from the application, if any.
                 elsa.AddWorkflowsFrom<Program>();
+                elsa.AddWorkflowsFromModules();
             });
+
+            builder.Services.AddTransient<Mediator>();
 
             // Configure CORS to allow designer app hosted on a different origin to invoke the APIs.
             builder.Services.AddCors(cors => cors

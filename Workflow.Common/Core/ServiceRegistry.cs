@@ -1,10 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Genesis.Common.Core
 {
@@ -35,7 +30,10 @@ namespace Genesis.Common.Core
                     throw new InvalidOperationException($"Method {method.Name} does not have a ServiceActionAttribute");
                 }
 
-                _serviceActions.Add(actionNameAttribute.Action, method);
+                if(!_serviceActions.ContainsKey(actionNameAttribute.Action))
+                {
+                    _serviceActions.Add(actionNameAttribute.Action, method);
+                }
             }
 
             _serviceCollection.AddTransient<TService, TImplementation>();

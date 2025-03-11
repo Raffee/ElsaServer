@@ -31,7 +31,7 @@ namespace Genesis.Common.Core
                 throw new InvalidOperationException($"No service handler found for action {actionName}");
             }
 
-            return await (Task<TResponse?>)actionMethod!.Invoke(handler!, [request!]);
+            return await (Task<TResponse?>)actionMethod!.Invoke(handler!, [request]);
         }
     }
 }

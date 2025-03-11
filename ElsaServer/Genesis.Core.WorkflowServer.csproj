@@ -20,4 +20,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ModulePlugins\" />
+    <Folder Include="AdapterPlugins\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Workflow.Common\Genesis.Common.csproj" />
+  </ItemGroup>
+
 </Project>

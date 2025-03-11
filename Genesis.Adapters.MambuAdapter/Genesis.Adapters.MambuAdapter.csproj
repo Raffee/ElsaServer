@@ -10,4 +10,8 @@
     <ProjectReference Include="..\BorrowerModule\Genesis.Modules.BorrowersModule.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Path\To\Another\Project\bin\&quot;&#xD;&#xA;" />
+  </Target>
+
 </Project>
