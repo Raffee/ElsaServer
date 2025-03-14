@@ -20,7 +20,7 @@ namespace Genesis.Adapters.MambuAdapter
 
         public Task<Guid> CreateBorrowerAsync(CreateBorrowerRequestDto request)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(Guid.NewGuid());
         }
 
         public Task DeleteBorrowerAsync(Guid borrowerId)
