@@ -45,30 +45,24 @@ namespace ElsaServer.Workflows
                         Variable = loanInterestRateVariable,
                         Value = new(0.1)
                     },
-                    new Sequence
+                    new GenesisModuleAction<CreateBorrowerRequestDto, Guid>()
                     {
-                        Activities =
+                        InputData = new Elsa.Workflows.Models.Input<CreateBorrowerRequestDto>(new CreateBorrowerRequestDto
                         {
-                            new GenesisModuleAction<CreateBorrowerRequestDto, Guid>()
-                            {
-                                InputData = new Elsa.Workflows.Models.Input<CreateBorrowerRequestDto>(new CreateBorrowerRequestDto
-                                {
-                                    FirstName = "John",
-                                    LastName = "Doe",
-                                }),
-                                ActionName = ServiceActions.Borrowers.CreateBorrower,
-                                Result = new(newBorrowerIdVariable)
-                            },
-                            new WriteHttpResponse
-                            {
-                                Content = new(context =>
-                                {
-                                    return $"Loan created for borrower {newBorrowerIdVariable.Get(context)}";
-                                }),
-                                ContentType = new("text/plain"),
-                                StatusCode = new(System.Net.HttpStatusCode.OK)
-                            }
-                        }
+                            FirstName = "John",
+                            LastName = "Doe",
+                        }),
+                        ActionName = ServiceActions.Borrowers.CreateBorrower,
+                        Result = new(newBorrowerIdVariable)
+                    },
+                    new WriteHttpResponse
+                    {
+                        Content = new(context =>
+                        {
+                            return $"Loan created for borrower: {newBorrowerIdVariable.Get(context)}";
+                        }),
+                        ContentType = new("text/plain"),
+                        StatusCode = new(System.Net.HttpStatusCode.OK)
                     }
                 }
             };
