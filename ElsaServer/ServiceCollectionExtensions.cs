@@ -15,7 +15,7 @@ namespace Genesis.Core.WorkflowServer
         public static IServiceCollection LoadBusinessModules(this IServiceCollection services)
         {
             // Load assemblies dynamically
-            string pluginsPath = @"C:\Users\Raffee.Parseghian\OneDrive - Octopus Group\Documents\__repos\_test\ElsaServer\ElsaServer\ModulePlugins";
+            string pluginsPath = Path.Combine(AppContext.BaseDirectory, "Plugins/ModulePlugins");
             var loadedAssemblies = LoadAssembliesFromFolder(pluginsPath);
 
             // Register services that implement IGenesisModule from loaded assemblies
@@ -40,7 +40,7 @@ namespace Genesis.Core.WorkflowServer
             //Get the service registry
             var serviceRegistry = services.BuildServiceProvider().GetService<ServiceRegistry>();
             // Load assemblies dynamically
-            string pluginsPath = @"C:\Users\Raffee.Parseghian\OneDrive - Octopus Group\Documents\__repos\_test\ElsaServer\ElsaServer\AdapterPlugins";
+            string pluginsPath = Path.Combine(AppContext.BaseDirectory, "Plugins/AdapterPlugins"); 
             var loadedAssemblies = LoadAssembliesFromFolder(pluginsPath);
 
             // Register services that implement IGenesisModule from loaded assemblies
@@ -77,7 +77,7 @@ namespace Genesis.Core.WorkflowServer
 
         public static IModule AddWorkflowsFromModules(this IModule module)
         {
-            string pluginsPath = @"C:\Users\Raffee.Parseghian\OneDrive - Octopus Group\Documents\__repos\_test\ElsaServer\ElsaServer\ModulePlugins";
+            string pluginsPath = Path.Combine(AppContext.BaseDirectory, "Plugins/ModulePlugins");
             var loadedAssemblies = LoadAssembliesFromFolder(pluginsPath);
 
             foreach (var assembly in loadedAssemblies)
