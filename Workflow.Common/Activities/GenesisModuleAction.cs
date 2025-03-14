@@ -11,16 +11,17 @@ namespace Workflow.Common.Activities
     ///  Write a line of text to the console.
     /// </summary>
     [Activity("Elsa", "Console", "Write a line of text to the console.")]
-    public class GenesisModeuleAction<TInput, TOutput>() : CodeActivity<TOutput> 
+    public class GenesisModuleAction<TInput, TOutput>() : CodeActivity<TOutput> 
     {
-        public Input<TInput> Data { get; set; } = default!;
+        [Output(Description = "The input of the action.")]
+        public Input<TInput> InputData { get; set; } = default!;
         public required string ActionName { get; set; }
 
         /// <inheritdoc />
         protected override void Execute(ActivityExecutionContext context)
         {
             var mediator = context.GetRequiredService<Mediator>();
-            var data = Data.Get(context);
+            var data = InputData.Get(context);
 
             if ((data == null))
             {
