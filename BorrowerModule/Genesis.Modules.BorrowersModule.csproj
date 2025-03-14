@@ -11,6 +11,12 @@
     <PackageReference Include="Elsa.Workflows.Core" Version="3.3.4" />
   </ItemGroup>
 
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(OutputPath)Genesis.Common.dll" DestinationFolder="D:\Users\Raffee\source\repos\ElsaServer\ElsaServer\bin\Debug\net8.0\Plugins\ModulePlugins\" />
+    <Copy SourceFiles="$(OutputPath)Genesis.Modules.BorrowersModule.dll" DestinationFolder="D:\Users\Raffee\source\repos\ElsaServer\ElsaServer\bin\Debug\net8.0\Plugins\ModulePlugins\" />
+  </Target>
+
   <ItemGroup>
     <ProjectReference Include="..\Workflow.Common\Genesis.Common.csproj" />
   </ItemGroup>

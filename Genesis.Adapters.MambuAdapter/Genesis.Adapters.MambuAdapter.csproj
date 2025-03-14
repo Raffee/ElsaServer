@@ -10,8 +10,12 @@
     <ProjectReference Include="..\BorrowerModule\Genesis.Modules.BorrowersModule.csproj" />
   </ItemGroup>
 
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /Y &quot;$(TargetPath)&quot; &quot;C:\Path\To\Another\Project\bin\&quot;&#xD;&#xA;" />
+    <Copy SourceFiles="$(OutputPath)Genesis.Adapters.MambuAdapter.dll" DestinationFolder="D:\Users\Raffee\source\repos\ElsaServer\ElsaServer\bin\Debug\net8.0\Plugins\AdapterPlugins\" />
+    <Copy SourceFiles="$(OutputPath)Genesis.Common.dll" DestinationFolder="D:\Users\Raffee\source\repos\ElsaServer\ElsaServer\bin\Debug\net8.0\Plugins\AdapterPlugins\" />
+    <Copy SourceFiles="$(OutputPath)Genesis.Modules.BorrowersModule.dll" DestinationFolder="D:\Users\Raffee\source\repos\ElsaServer\ElsaServer\bin\Debug\net8.0\Plugins\AdapterPlugins\" />
   </Target>
+
 
 </Project>
